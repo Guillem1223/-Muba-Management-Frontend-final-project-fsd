@@ -5,7 +5,7 @@ export function Footer() {
   return (
     <div className="footer">
       <img
-        src="../../../public/img/LOGO MUBA Management.svg"
+        src="/img/LOGO MUBA Management.svg"
         alt="Logo Muba Management & Booking"
       />
     </div>
