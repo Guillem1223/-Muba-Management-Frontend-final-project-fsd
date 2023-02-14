@@ -40,7 +40,7 @@ export default function Navbar() {
             <a className="navbar-brand" href="/">
               <img
                 className="logo"
-                src="../../../public/img/LOGO MUBA Management.svg"
+                src="/img/LOGO MUBA Management.svg"
                 alt="Muba Management & booking"
                 width="30px"
                 height="30px"
@@ -66,7 +66,7 @@ export default function Navbar() {
               <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                 <li className="nav-item">
                   <NavLink to="/movies" className="nav-link" end>
-                    Movies
+                    Performers
                   </NavLink>
                 </li>
                 <li>
@@ -129,13 +129,13 @@ export default function Navbar() {
             <a className="navbar-brand" href="/">
               <img
                 className="logo"
-                src="../../../img/logo_size.jpg"
-                alt="Movie Geeks"
+                src="/img/LOGO MUBA Management.svg"
+                alt="Muba Management & Booking"
                 width="30px"
                 height="30px"
               />
 
-              <span>Movie Geeks</span>
+              <span>Muba M&B</span>
             </a>
             <button
               className="navbar-toggler"

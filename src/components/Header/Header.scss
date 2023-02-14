@@ -1,11 +1,13 @@
 .Header {
-  background-color: aqua;
-  width: 100%;
+  width: 390px;
+  position: absolute;
+  top: 0px;
+  left: 0px;
 }
 
 nav ul {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   list-style: none;
   padding: 0;
 }
