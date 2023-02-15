@@ -46,7 +46,12 @@ export const Home = () => {
   };
   return (
     <div className="homeContainer">
-      <img className="backgroundHome" src="/img/home.webp" alt="" />
+      {/* <video
+        src="/img/CELEBRACIONES3.mp4"
+        autoPlay="true"
+        loop="true"
+        className="backgroundVideo"
+      > */}
       <div className="homeCard">
         <div className="form">
           <form>
@@ -94,6 +99,7 @@ export const Home = () => {
           </form>
         </div>
       </div>
+      {/* </video> */}
     </div>
   );
 };

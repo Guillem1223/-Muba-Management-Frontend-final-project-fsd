@@ -36,7 +36,7 @@ export default function Navbar() {
     return (
       <div>
         <nav className="navbar navbar-expand-lg navbar-light bg-dark ">
-          <div className="container">
+          <div className="containerNav">
             <a className="navbar-brand" href="/">
               <img
                 className="logo"
@@ -125,7 +125,7 @@ export default function Navbar() {
     return (
       <div>
         <nav className="navbar navbar-expand-lg navbar-light bg-dark ">
-          <div className="container">
+          <div className="containerNav">
             <a className="navbar-brand" href="/">
               <img
                 className="logo"
