@@ -16,6 +16,7 @@ import { Footer } from "./components/Footer/Footer";
 import { Header } from "./components/Header/Header";
 import { Home } from "./containers/Home/Home";
 import { Register } from "./containers/Register/Register";
+import { Contractor } from "./containers/Contractor/Contractor";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -26,7 +27,8 @@ function App() {
         <Header />
         <Routes>
           <Route path="/signUp" element={<Register />} />
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<Home />} />ç
+          <Route path="/contractor_profile" element={<Contractor />} />
         </Routes>
         <Footer />
       </BrowserRouter>

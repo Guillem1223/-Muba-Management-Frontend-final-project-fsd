@@ -46,12 +46,6 @@ export const Home = () => {
   };
   return (
     <div className="homeContainer">
-      {/* <video
-        src="/img/CELEBRACIONES3.mp4"
-        autoPlay="true"
-        loop="true"
-        className="backgroundVideo"
-      > */}
       <div className="homeCard">
         <div className="form">
           <form>
@@ -99,6 +93,9 @@ export const Home = () => {
           </form>
         </div>
       </div>
+      {/* <div className="backgroundVideo">
+        <video src="/img/CELEBRACIONES3.mp4" autoPlay="true" loop="true" />
+      </div> */}
       {/* </video> */}
     </div>
   );

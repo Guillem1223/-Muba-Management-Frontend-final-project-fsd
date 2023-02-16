@@ -12,12 +12,12 @@ export const Register = (props) => {
   };
 
   const navigate = useNavigate();
-  const [name, setName] = useState("");
+  const [nombre_user, setNombre_user] = useState("");
   const [mail, setMail] = useState("");
   const [password, setPassword] = useState("");
   const [telefono, setTelefono] = useState("");
   const handleName = (ev) => {
-    setName(ev.target.value);
+    setNombre_user(ev.target.value);
   };
   const handleMail = (ev) => {
     setMail(ev.target.value);
@@ -25,9 +25,12 @@ export const Register = (props) => {
   const handlePassword = (ev) => {
     setPassword(ev.target.value);
   };
+  const handleTelefono = (ev) => {
+    setTelefono(ev.target.value);
+  };
 
   const credentials = {
-    name,
+    nombre_user,
     email: mail,
     password,
     telefono,
@@ -45,6 +48,9 @@ export const Register = (props) => {
     register(credentials);
     navigate("/");
     console.log(credentials);
+  };
+  const handleContractor = () => {
+    navigate("/contractor_profile");
   };
   return (
     <div className="registerContainer">
@@ -67,7 +73,12 @@ export const Register = (props) => {
               <label htmlFor="inputSurname" className="form-label">
                 Phone Number
               </label>
-              <input type="name" className="form-control" id="inputSurname" />
+              <input
+                type="name"
+                className="form-control"
+                id="inputSurname"
+                onChange={handleTelefono}
+              />
             </div>
             <div className="col-md-6">
               <label htmlFor="inputEmail4" className="form-label">
@@ -98,7 +109,11 @@ export const Register = (props) => {
                   Performer
                 </button>
 
-                <button id="buttonContractor" className="btn btn-success">
+                <button
+                  id="buttonContractor"
+                  className="btn btn-success"
+                  onClick={handleContractor}
+                >
                   Contractor
                 </button>
               </div>
