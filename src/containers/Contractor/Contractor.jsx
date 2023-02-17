@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
+import "./Contractor.scss";
 export const Contractor = (props) => {
   const initialValues = {
     tax_data: "",
@@ -17,6 +18,11 @@ export const Contractor = (props) => {
   };
   const handleTechnical_rider = (ev) => {
     setTechnical_rider(ev.target.value);
+  };
+  const credentials = {
+    tax_data,
+    backline,
+    technical_rider,
   };
   const handleRegister = () => {
     register(credentials);
@@ -47,6 +53,7 @@ export const Contractor = (props) => {
                 type="name"
                 className="form-control"
                 id="inputSurname"
+                placeholder="If you have material and sound equipment, create a list. If you don't have equipment, don't worry! just comment here"
                 onChange={handleTechnical_rider}
               />
             </div>
@@ -58,6 +65,7 @@ export const Contractor = (props) => {
                 type="email"
                 className="form-control"
                 id="inputEmail4"
+                placeholder="If you have material and instruments, create a list. If you don't have equipment, don't worry! just comment here"
                 onChange={handleBackline}
               />
             </div>

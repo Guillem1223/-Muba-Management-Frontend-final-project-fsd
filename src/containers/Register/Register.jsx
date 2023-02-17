@@ -52,6 +52,9 @@ export const Register = (props) => {
   const handleContractor = () => {
     navigate("/contractor_profile");
   };
+  const handlePerformer = () => {
+    navigate("/performer_profile");
+  };
   return (
     <div className="registerContainer">
       <img className="backgroundHome" src="/img/home.webp" alt="" />
@@ -105,7 +108,11 @@ export const Register = (props) => {
 
             <div className="col-12">
               <div className="form-check">
-                <button id="buttonPerformer" className="btn btn-success">
+                <button
+                  id="buttonPerformer"
+                  className="btn btn-success"
+                  onClick={handlePerformer}
+                >
                   Performer
                 </button>
 
