@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 
 export const Cards = ({ card }) => {
   const navigate = useNavigate();
-  const selectCharacter = (card) => {
+  const selectPerformer = (card) => {
     navigate(`/performers/${users_type_id}`);
   };
 
@@ -15,7 +15,7 @@ export const Cards = ({ card }) => {
         <div className="card-body">
           <h5 className="card-title">{character.name}</h5>
           <button
-            onClick={() => selectCharacter(character)}
+            onClick={() => selectPerformer(card)}
             className="btn btn-primary text-white"
           >
             View more
