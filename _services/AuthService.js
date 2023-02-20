@@ -23,3 +23,5 @@ AuthService.register = async (credentials) => {
     technical_rider: credentials.technical_rider,
   });
 };
+
+export default AuthService;
