@@ -2,36 +2,40 @@ import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import "./Register.scss";
 import { NavLink, useNavigate } from "react-router-dom";
-
+import { useSelector, useDispatch } from "react-redux";
+import {
+  setNombre_user,
+  setEmail,
+  setPassword,
+  setTelefono,
+} from "../../store/slices/register/registerSlice";
 export const Register = (props) => {
-  const initialValues = {
-    name: "",
-    email: "",
-    password: "",
-    telefono: "",
-  };
+  const { nombre_user, email, password, telefono } = useSelector(
+    (state) => state.register
+  );
 
   const navigate = useNavigate();
-  const [nombre_user, setNombre_user] = useState("");
-  const [mail, setMail] = useState("");
-  const [password, setPassword] = useState("");
-  const [telefono, setTelefono] = useState("");
-  const handleName = (ev) => {
-    setNombre_user(ev.target.value);
+  const dispatch = useDispatch();
+  //   const [nombre_user, setNombre_user] = useState("");
+  //   const [mail, setMail] = useState("");
+  //   const [password, setPassword] = useState("");
+  //   const [telefono, setTelefono] = useState("");
+  const handleNombre_user = (ev) => {
+    dispatch(setNombre_user(ev.target.value));
   };
   const handleMail = (ev) => {
-    setMail(ev.target.value);
+    dispatch(setEmail(ev.target.value));
   };
   const handlePassword = (ev) => {
-    setPassword(ev.target.value);
+    dispatch(setPassword(ev.target.value));
   };
   const handleTelefono = (ev) => {
-    setTelefono(ev.target.value);
+    dispatch(setTelefono(ev.target.value));
   };
 
   const credentials = {
     nombre_user,
-    email: mail,
+    email,
     password,
     telefono,
   };
@@ -69,7 +73,7 @@ export const Register = (props) => {
                 type="name"
                 className="form-control"
                 id="inputName"
-                onChange={handleName}
+                onChange={handleNombre_user}
               />
             </div>
             <div className="col-md-6">
