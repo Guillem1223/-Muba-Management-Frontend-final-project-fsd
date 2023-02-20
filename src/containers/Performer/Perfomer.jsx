@@ -1,7 +1,12 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 import "./Performer.scss";
+import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import AuthService from "../../../_services/AuthService";
+
 export const Performer = (props) => {
+  const navigate = useNavigate();
   const initialValues = {
     project_description: "",
     rate_nonprofit_event: "",
@@ -16,6 +21,9 @@ export const Performer = (props) => {
   const [rate_300_capacity_event, setRate_300_capacity_event] = useState("");
   const [rate_350_capacity_event, setRate_350_capacity_event] = useState("");
   const [rate_1000_capacity_event, setRate_1000_capacity_event] = useState("");
+  const { nombre_user, email, password, telefono, role } = useSelector(
+    (state) => state.register
+  );
   const handleProject_description = (ev) => {
     setProject_description(ev.target.value);
   };
@@ -41,6 +49,18 @@ export const Performer = (props) => {
     rate_300_capacity_event,
     rate_350_capacity_event,
     rate_1000_capacity_event,
+    nombre_user,
+    email,
+    password,
+    telefono,
+    role,
+  };
+  const register = (credentials) => {
+    try {
+      AuthService.register(credentials);
+    } catch (error) {
+      console.log(error);
+    }
   };
   const handleRegister = () => {
     register(credentials);

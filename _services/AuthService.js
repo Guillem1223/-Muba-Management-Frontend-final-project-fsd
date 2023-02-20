@@ -1,4 +1,4 @@
-const axios = require;
+import axios from "axios";
 import { enviroment } from "../_enviroments/enviroment";
 
 const AuthService = {};
@@ -6,12 +6,13 @@ const AuthService = {};
 const authApiUrl = `${enviroment.BASE_API_URL}/users`;
 
 AuthService.register = async (credentials) => {
-  console.log(credentials);
+  console.log("credentials: ", credentials);
   return await axios.post("http://localhost:3000/users/reg", {
-    name: credentials.name,
+    nombre_user: credentials.nombre_user,
     email: credentials.email,
     password: credentials.password,
-    movies: credentials.movies,
+    telefono: credentials.telefono,
+    role: credentials.role,
     project_description: credentials.project_description,
     rate_nonprofit_event: credentials.rate_nonprofit_event,
     rate_150_capacity_event: credentials.rate_150_capacity_event,

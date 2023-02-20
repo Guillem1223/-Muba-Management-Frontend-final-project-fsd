@@ -8,9 +8,10 @@ import {
   setEmail,
   setPassword,
   setTelefono,
+  setRole,
 } from "../../store/slices/register/registerSlice";
 export const Register = (props) => {
-  const { nombre_user, email, password, telefono } = useSelector(
+  const { nombre_user, email, password, telefono, role } = useSelector(
     (state) => state.register
   );
 
@@ -38,6 +39,7 @@ export const Register = (props) => {
     email,
     password,
     telefono,
+    role,
   };
 
   const register = (credentials) => {
@@ -48,15 +50,12 @@ export const Register = (props) => {
     }
   };
 
-  const handleRegister = () => {
-    register(credentials);
-    navigate("/");
-    console.log(credentials);
-  };
   const handleContractor = () => {
+    dispatch(setRole("contractor"));
     navigate("/contractor_profile");
   };
   const handlePerformer = () => {
+    dispatch(setRole("performer"));
     navigate("/performer_profile");
   };
   return (
@@ -130,10 +129,6 @@ export const Register = (props) => {
               </div>
               <span>Choose your Role to use the platform</span>
             </div>
-            <div className="col-12"></div>
-            <button className="btn btn-success" onClick={handleRegister}>
-              Sign in
-            </button>
           </form>
         </div>
       </div>
