@@ -1,7 +1,11 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 import "./Contractor.scss";
+import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
+import AuthService from "../../../_services/AuthService";
 export const Contractor = (props) => {
+  const navigate = useNavigate();
   const initialValues = {
     tax_data: "",
     backline: "",
@@ -10,6 +14,9 @@ export const Contractor = (props) => {
   const [tax_data, setTax_data] = useState("");
   const [backline, setBackline] = useState("");
   const [technical_rider, setTechnical_rider] = useState("");
+  const { nombre_user, email, password, telefono, role } = useSelector(
+    (state) => state.register
+  );
   const handleTax_data = (ev) => {
     setTax_data(ev.target.value);
   };
@@ -23,6 +30,18 @@ export const Contractor = (props) => {
     tax_data,
     backline,
     technical_rider,
+    nombre_user,
+    email,
+    password,
+    telefono,
+    role,
+  };
+  const register = (credentials) => {
+    try {
+      AuthService.register(credentials);
+    } catch (error) {
+      console.log(error);
+    }
   };
   const handleRegister = () => {
     register(credentials);
