@@ -1,5 +1,11 @@
 .homeContainer {
   position: relative;
+  display: flex;
+  justify-self: center;
+  padding-top: 150px;
+  padding-bottom: 150px;
+  padding-left: 35px;
+  padding-right: 35px;
 }
 .homeCard {
   position: absolute;

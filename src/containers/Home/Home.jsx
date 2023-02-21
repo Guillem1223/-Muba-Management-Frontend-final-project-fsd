@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import TokenStorageService from "../../../_services/TokenStorageService";
-import AuthService from "../../../_enviroments/AuthService";
-export const Home = () => {
+import AuthService from "../../../_services/AuthService";
+import { validateFormValues } from "../../_helpers/form-utilities";
+export const Home = (props) => {
   const initialValues = {
     email: "",
     password: "",
@@ -33,8 +34,11 @@ export const Home = () => {
       console.log(res.data.role);
       sessionStorage.setItem("userId", res.data.id);
       switch (res.data.role) {
-        case "user":
-          navigate("/movies");
+        case "performer":
+          navigate("/performers_list");
+          break;
+        case "contractor":
+          navigate("/performers_list");
           break;
         case "super_admin":
           navigate("/admin");
@@ -44,11 +48,23 @@ export const Home = () => {
       console.log(error);
     }
   };
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormValues({
+      ...formValues,
+      [name]: value,
+    });
+  };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setFormErrors(validateFormValues(formValues));
+    setIsSubmit(true);
+  };
   return (
     <div className="homeContainer">
       <div className="homeCard">
         <div className="form">
-          <form>
+          <form onSubmit={handleSubmit}>
             <div className="mb-3">
               <label htmlFor="exampleInputEmail1" className="form-label">
                 Email address
@@ -58,8 +74,8 @@ export const Home = () => {
                 name="email"
                 className="form-control"
                 id="exampleInputEmail1"
-                // value={formValues.email}
-                // onChange={handleChange}
+                value={formValues.email}
+                onChange={handleChange}
                 aria-describedby="emailHelp"
               />
               <div id="emailHelp" className="form-text form-text-error">
@@ -76,7 +92,7 @@ export const Home = () => {
                 className="form-control"
                 id="exampleInputPassword1"
                 value={formValues.password}
-                // onChange={handleChange}
+                onChange={handleChange}
               />
               <div id="emailHelp" className="form-text form-text-error">
                 {formErrors.password}

@@ -24,5 +24,12 @@ AuthService.register = async (credentials) => {
     technical_rider: credentials.technical_rider,
   });
 };
+AuthService.login = async (credentials) => {
+  console.log("credentials: ", credentials);
+  return await axios.post("http://localhost:3000/users/login", {
+    email: credentials.email,
+    password: credentials.password,
+  });
+};
 
 export default AuthService;
