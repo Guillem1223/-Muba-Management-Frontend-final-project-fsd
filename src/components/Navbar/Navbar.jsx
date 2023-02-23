@@ -46,7 +46,7 @@ export default function Navbar() {
                 height="30px"
               />
 
-              <span>Movie Geeks</span>
+              <span>Muba M&B</span>
             </a>
             <button
               className="navbar-toggler"
@@ -71,7 +71,7 @@ export default function Navbar() {
                 </li>
                 <li>
                   <NavLink to="/users/:id" className="nav-link" href="#">
-                    User Rents
+                    User Profile
                   </NavLink>
                 </li>
 
@@ -90,11 +90,6 @@ export default function Navbar() {
                     className="dropdown-menu"
                     aria-labelledby="navbarDropdown"
                   >
-                    <li>
-                      <NavLink to="/signup" className="dropdown-item" href="#">
-                        Sign Up
-                      </NavLink>
-                    </li>
                     <li>
                       <hr className="dropdown-divider" />
                     </li>
