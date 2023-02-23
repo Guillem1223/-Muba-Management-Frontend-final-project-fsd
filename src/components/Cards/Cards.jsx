@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 export const Cards = ({ performers }) => {
   const navigate = useNavigate();
   const selectPerformer = (performers) => {
-    navigate(`/performers/${users_type_id}`);
+    navigate(`/performers/${performers.users_type_id}`);
   };
 
   return (

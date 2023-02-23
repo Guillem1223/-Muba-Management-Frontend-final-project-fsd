@@ -5,9 +5,15 @@ const UserService = {};
 
 UserService.findByRole = async () => {
   try {
+    const config = {
+      headers: {
+        Authorization: `Bearer ` + sessionStorage.getItem("auth-token"),
+      },
+    };
     const response = await axios.get(
       "http://localhost:3000/users/find/performer",
-      { params: { role: "performer" } }
+      config
+      //   { params: { role: "performer" } }
     );
     return response.data;
   } catch (error) {
