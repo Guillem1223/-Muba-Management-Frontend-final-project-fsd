@@ -70,7 +70,7 @@ export default function Navbar() {
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink to="/users/:id" className="nav-link" href="#">
+                  <NavLink to="/user_profile" className="nav-link" href="#">
                     User Profile
                   </NavLink>
                 </li>

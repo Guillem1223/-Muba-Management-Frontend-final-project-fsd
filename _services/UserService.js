@@ -21,5 +21,14 @@ UserService.findByRole = async () => {
     throw new Error("Error al obtener los usuarios con el rol performer");
   }
 };
+UserService.getUserById = async (userId) => {
+  try {
+    const response = await axios.get(`http://localhost:3000/users/${userId}`);
+    return response.data;
+  } catch (error) {
+    console.log(error.message || error);
+    throw new Error(`Error al obtener el usuario con ID ${userId}`);
+  }
+};
 
 export default UserService;
