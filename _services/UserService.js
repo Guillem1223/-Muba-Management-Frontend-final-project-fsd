@@ -38,5 +38,25 @@ UserService.getUserById = async (userId) => {
     throw new Error(`Error al obtener el usuario con ID ${userId}`);
   }
 };
+UserService.updateUser = async (userId, userData) => {
+  console.log("userId: ", userId);
+  console.log("userData: ", userData);
+  try {
+    const config = {
+      headers: {
+        Authorization: `Bearer ` + sessionStorage.getItem("auth-token"),
+      },
+    };
+    const response = await axios.post(
+      `http://localhost:3000/users//update/${userId}`,
+      userData,
+      config
+    );
+    return response.data;
+  } catch (error) {
+    console.log(error.message || error);
+    throw new Error(`Error al actualizar el usuario con ID ${userId}`);
+  }
+};
 
 export default UserService;
