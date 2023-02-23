@@ -23,7 +23,15 @@ UserService.findByRole = async () => {
 };
 UserService.getUserById = async (userId) => {
   try {
-    const response = await axios.get(`http://localhost:3000/users/${userId}`);
+    const config = {
+      headers: {
+        Authorization: `Bearer ` + sessionStorage.getItem("auth-token"),
+      },
+    };
+    const response = await axios.get(
+      `http://localhost:3000/users/${userId}`,
+      config
+    );
     return response.data;
   } catch (error) {
     console.log(error.message || error);
