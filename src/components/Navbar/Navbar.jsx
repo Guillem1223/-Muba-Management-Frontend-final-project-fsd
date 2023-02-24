@@ -65,7 +65,7 @@ export default function Navbar() {
             >
               <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                 <li className="nav-item">
-                  <NavLink to="/movies" className="nav-link" end>
+                  <NavLink to="/performers_list" className="nav-link" end>
                     Performers
                   </NavLink>
                 </li>

@@ -47,9 +47,17 @@ UserService.updateUser = async (userId, userData) => {
         Authorization: `Bearer ` + sessionStorage.getItem("auth-token"),
       },
     };
-    const response = await axios.post(
-      `http://localhost:3000/users//update/${userId}`,
-      userData,
+    console.log("config: ", config);
+    const response = await axios.put(
+      `http://localhost:3000/users/update/${userId}`,
+
+      {
+        nombre_user: userData.nombre_user,
+        email: userData.email,
+        telefono: userData.telefono,
+
+        role: userData.role,
+      },
       config
     );
     return response.data;
