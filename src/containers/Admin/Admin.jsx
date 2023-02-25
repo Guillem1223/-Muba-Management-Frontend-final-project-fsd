@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import UserService from "../../../_services/UserService";
 import TokenStorageService from "../../../_services/TokenStorageService";
+import AdminService from "../../../_services/AdminService";
 
 export const Admin = () => {
   const token = TokenStorageService.getToken();
@@ -19,8 +20,13 @@ export const Admin = () => {
       console.log(error.message || error);
     }
   };
+  const handleDelete = async (userObj) => {
+    const res = await AdminService.deleteUserById(userObj);
+    console.log(res);
+    await getAllUsers(token);
+  };
   console.log(user);
-  console.log(user.users_type_id);
+
   return (
     <div>
       <h1>Admin</h1>
@@ -30,7 +36,15 @@ export const Admin = () => {
           <li>Email: {userObj.email}</li>
           <li>Phone Number: {userObj.telefono}</li>
           <li>Role: {userObj.role}</li>
-          <button className="btn btn-danger">Delete user</button>
+          <li>Id: {userObj.users_type_id}</li>
+          <button
+            className="btn btn-danger"
+            onClick={() => {
+              handleDelete(userObj);
+            }}
+          >
+            Delete user
+          </button>
         </ol>
       ))}
     </div>
