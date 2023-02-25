@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import UserService from "../../../_services/UserService";
 import TokenStorageService from "../../../_services/TokenStorageService";
 import AdminService from "../../../_services/AdminService";
-
+import "./Admin.scss";
 export const Admin = () => {
   const token = TokenStorageService.getToken();
   const [user, setUsers] = useState([]);
@@ -28,25 +28,27 @@ export const Admin = () => {
   console.log(user);
 
   return (
-    <div>
+    <div className="AdminContainer">
       <h1>Admin</h1>
-      {user.map((userObj) => (
-        <ol key={userObj.users_type_id}>
-          <li>Name: {userObj.nombre_user}</li>
-          <li>Email: {userObj.email}</li>
-          <li>Phone Number: {userObj.telefono}</li>
-          <li>Role: {userObj.role}</li>
-          <li>Id: {userObj.users_type_id}</li>
-          <button
-            className="btn btn-danger"
-            onClick={() => {
-              handleDelete(userObj);
-            }}
-          >
-            Delete user
-          </button>
-        </ol>
-      ))}
+      <div>
+        {user.map((userObj) => (
+          <ol key={userObj.users_type_id}>
+            <li>Name: {userObj.nombre_user}</li>
+            <li>Email: {userObj.email}</li>
+            <li>Phone Number: {userObj.telefono}</li>
+            <li>Role: {userObj.role}</li>
+            <li>Id: {userObj.users_type_id}</li>
+            <button
+              className="btn btn-danger"
+              onClick={() => {
+                handleDelete(userObj);
+              }}
+            >
+              Delete user
+            </button>
+          </ol>
+        ))}
+      </div>
     </div>
   );
 };
