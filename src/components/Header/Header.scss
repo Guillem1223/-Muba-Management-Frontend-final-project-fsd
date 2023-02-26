@@ -3,12 +3,13 @@
   position: fixed;
   top: 0px;
   left: 0px;
-  height: 150px;
+  height: 100px;
+  z-index: 1;
 }
 
 nav ul {
   display: flex;
-  justify-content: flex-start;
+  justify-content: flex-end;
   list-style: none;
   padding: 0;
 }

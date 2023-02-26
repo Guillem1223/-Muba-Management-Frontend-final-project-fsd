@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Cards } from "../../components/Cards/Cards";
 import UserService from "../../../_services/UserService";
-
+import "./PerformersList.scss";
 export function PerformersList() {
   // HOOKS
   const [performers, setPerformers] = useState([]);
@@ -25,9 +25,9 @@ export function PerformersList() {
   };
 
   return (
-    <div>
+    <div className="performersListContainer ">
       <h1>Performers List</h1>
-      <div className="PerformersList">
+      <div className="PerformersList justify-content-center align-items-center">
         {performers &&
           performers.length > 0 &&
           performers.map((perf) => (

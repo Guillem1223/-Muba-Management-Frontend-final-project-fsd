@@ -34,6 +34,7 @@ export const Home = (props) => {
       TokenStorageService.saveToken(res.data.token);
       console.log(res.data.role);
       sessionStorage.setItem("userId", res.data.id);
+
       switch (res.data.role) {
         case "performer":
           navigate("/performers_list");

@@ -40,10 +40,10 @@ export default function Navbar() {
             <a className="navbar-brand" href="/">
               <img
                 className="logo"
-                src="/img/LOGO MUBA Management.svg"
+                src="/public/img/LOGO MUBA Management Navbar.svg"
                 alt="Muba Management & booking"
-                width="30px"
-                height="30px"
+                width="50px"
+                height="40px"
               />
 
               <span>Muba M&B</span>
@@ -124,10 +124,10 @@ export default function Navbar() {
             <a className="navbar-brand" href="/">
               <img
                 className="logo"
-                src="/img/LOGO MUBA Management.svg"
+                src="/public/img/LOGO MUBA Management Navbar.svg"
                 alt="Muba Management & Booking"
-                width="30px"
-                height="30px"
+                width="50px"
+                height="40px"
               />
 
               <span>Muba M&B</span>
