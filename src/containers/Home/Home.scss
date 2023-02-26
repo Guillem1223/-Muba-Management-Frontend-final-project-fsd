@@ -1,16 +1,31 @@
 .homeContainer {
-  position: relative;
+  max-width: 390px;
+
   display: flex;
-  justify-self: center;
+  justify-content: center;
+  align-items: center;
   padding-top: 150px;
   padding-bottom: 150px;
   padding-left: 35px;
   padding-right: 35px;
 }
+@media screen and (min-width: 768px) {
+  .homeContainer {
+    max-width: 800px;
+  }
+  .homeCard {
+    max-width: 800px;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .homeContainer {
+    max-width: 1200px;
+  }
+}
 .homeCard {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 2;
+  max-width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

@@ -3,6 +3,7 @@ import { NavLink, useNavigate } from "react-router-dom";
 import TokenStorageService from "../../../_services/TokenStorageService";
 import AuthService from "../../../_services/AuthService";
 import { validateFormValues } from "../../_helpers/form-utilities";
+import "./Home.scss";
 export const Home = (props) => {
   const initialValues = {
     email: "",
@@ -61,8 +62,8 @@ export const Home = (props) => {
     setIsSubmit(true);
   };
   return (
-    <div className="homeContainer">
-      <div className="homeCard">
+    <div className="homeContainer d-flex">
+      <div className="homeCard mx-auto">
         <div className="form">
           <form onSubmit={handleSubmit}>
             <div className="mb-3">
