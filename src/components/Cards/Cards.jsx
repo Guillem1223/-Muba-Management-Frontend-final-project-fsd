@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { useNavigate } from "react-router-dom";
+import "./Cards.scss";
 
 export const Cards = ({ performers }) => {
   const navigate = useNavigate();
@@ -9,9 +10,13 @@ export const Cards = ({ performers }) => {
   };
 
   return (
-    <div>
-      <div className="card" style={{ width: "13rem" }}>
-        <img className="card-img-top" alt="Performer img" />
+    <div className="cardsContainer">
+      <div className="card" style={{ width: "20rem" }}>
+        <img
+          src="/public/img/Foto estandar performersCard.svg"
+          className="card-img-top"
+          alt="Performer img"
+        />
         <div className="card-body">
           <h5 className="card-title">{performers.nombre_user}</h5>
           <button
