@@ -25,9 +25,9 @@ export function PerformersList() {
   };
 
   return (
-    <div className="performersListContainer ">
+    <div className="container-fluid vw-100  ">
       <h1>Performers List</h1>
-      <div className="PerformersList justify-content-center align-items-center">
+      <div className="PerformersList container-fluid justify-content-center align-items-center col">
         {performers &&
           performers.length > 0 &&
           performers.map((perf) => (

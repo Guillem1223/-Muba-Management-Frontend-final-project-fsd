@@ -68,9 +68,9 @@ export const UserProfile = () => {
   //     </div>
   //   );
   return (
-    <div>
+    <div className="container-fluid vw-100 justify-content-center align-center pt-5">
       <h1>User Profile</h1>
-      <form>
+      <form className="justify-content-center align-center ">
         <ol>
           <li>
             <label>
