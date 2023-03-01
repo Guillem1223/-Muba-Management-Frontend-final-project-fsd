@@ -63,9 +63,9 @@ export const Home = (props) => {
     setIsSubmit(true);
   };
   return (
-    <div className="homeContainer d-flex">
-      <div className="homeCard mx-auto">
-        <div className="form">
+    <div className="container-fluid vw-100 d-flex justify-content-center align-center">
+      <div className="homeCard justify-content-center align-center">
+        <div className="form justify-content-center">
           <form onSubmit={handleSubmit}>
             <div className="mb-3">
               <label htmlFor="exampleInputEmail1" className="form-label">
