@@ -28,9 +28,9 @@ export const Admin = () => {
   console.log(user);
 
   return (
-    <div className="AdminContainer">
+    <div className="AdminContainer container-fluid d-flex justify-content-center mt-5 pt-5">
       <h1>Admin</h1>
-      <div>
+      <div className="pt-5 container-fluid d-flex flex-wrap">
         {user.map((userObj) => (
           <ol key={userObj.users_type_id}>
             <li>Name: {userObj.nombre_user}</li>
