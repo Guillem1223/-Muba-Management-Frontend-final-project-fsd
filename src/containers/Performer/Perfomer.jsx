@@ -21,6 +21,7 @@ export const Performer = (props) => {
   const [rate_300_capacity_event, setRate_300_capacity_event] = useState("");
   const [rate_350_capacity_event, setRate_350_capacity_event] = useState("");
   const [rate_1000_capacity_event, setRate_1000_capacity_event] = useState("");
+  const [music_styles, setMusic_styles] = useState("");
   const { nombre_user, email, password, telefono, role } = useSelector(
     (state) => state.register
   );
@@ -42,6 +43,9 @@ export const Performer = (props) => {
   const handleRate_1000_capacity_event = (ev) => {
     setRate_1000_capacity_event(ev.target.value);
   };
+  const handleMusic_styles = (ev) => {
+    setMusic_styles(ev.target.value);
+  };
   const credentials = {
     project_description,
     rate_nonprofit_event,
@@ -49,6 +53,7 @@ export const Performer = (props) => {
     rate_300_capacity_event,
     rate_350_capacity_event,
     rate_1000_capacity_event,
+    music_styles,
     nombre_user,
     email,
     password,
@@ -82,6 +87,18 @@ export const Performer = (props) => {
                 id="project_description"
                 placeholder="Create a description of your musical project, number of members of the group or band, music style, target audience, musical career, etc."
                 onChange={handleProject_description}
+              />
+            </div>
+            <div className="col-md-6">
+              <label htmlFor="inputEmail4" className="form-label">
+                Write the musical styles of your performance
+              </label>
+              <input
+                type="text"
+                className="form-control"
+                id="inputEmail4"
+                placeholder="Blues, Jazz, Soul, Funk"
+                onChange={handleMusic_styles}
               />
             </div>
             <div className="col-md-6">
@@ -139,6 +156,7 @@ export const Performer = (props) => {
                 onChange={handleRate_1000_capacity_event}
               />
             </div>
+
             <div className="col-12"></div>
             <button className="btn btn-success" onClick={handleRegister}>
               Sign in
