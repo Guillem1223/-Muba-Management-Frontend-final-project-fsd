@@ -19,6 +19,7 @@ AuthService.register = async (credentials) => {
     rate_300_capacity_event: credentials.rate_300_capacity_event,
     rate_350_capacity_event: credentials.rate_350_capacity_event,
     rate_1000_capacity_event: credentials.rate_1000_capacity_event,
+    music_styles: credentials.music_styles,
     tax_data: credentials.tax_data,
     backline: credentials.backline,
     technical_rider: credentials.technical_rider,
