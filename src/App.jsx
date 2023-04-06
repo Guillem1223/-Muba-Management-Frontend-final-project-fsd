@@ -21,6 +21,7 @@ import { Performer } from "./containers/Performer/Perfomer";
 import { PerformersList } from "./containers/PerformersList/PerformersList";
 import { UserProfile } from "./containers/UserProfile/UserProfile";
 import { Admin } from "./containers/Admin/Admin";
+import { PerformerDetail } from "./containers/PerformerDetail/PerformerDetail";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -35,6 +36,7 @@ function App() {
           <Route path="/contractor_profile" element={<Contractor />} />
           <Route path="/performer_profile" element={<Performer />} />
           <Route path="/performers_list" element={<PerformersList />} />
+          <Route path="/users/:id" element={<PerformerDetail />} />
           <Route path="/user_profile" element={<UserProfile />} />
           <Route path="/admin" element={<Admin />} />
         </Routes>
