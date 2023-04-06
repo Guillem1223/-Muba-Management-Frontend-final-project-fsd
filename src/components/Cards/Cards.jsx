@@ -4,11 +4,12 @@ import { useNavigate } from "react-router-dom";
 import "./Cards.scss";
 
 export const Cards = ({ performers }) => {
+  console.log("props: ", performers);
   const navigate = useNavigate();
   const selectPerformer = (performers) => {
-    navigate(`/performers/${performers.users_type_id}`);
+    navigate(`/users/${performers.users_type_id}`);
   };
-
+  console.log("performers: " + performers);
   return (
     <div className="cardsContainer">
       <div className="card" style={{ width: "20rem" }}>
@@ -18,7 +19,10 @@ export const Cards = ({ performers }) => {
           alt="Performer img"
         />
         <div className="card-body">
-          <h5 className="card-title">{performers.nombre_user}</h5>
+          <h2 className="card-title">{performers.nombre_user}</h2>
+          {performers.performers.map((performersItem, index) => (
+            <h5>{performersItem.music_styles}</h5>
+          ))}
           <button
             onClick={() => selectPerformer(performers)}
             className="btn btn-primary text-white"
