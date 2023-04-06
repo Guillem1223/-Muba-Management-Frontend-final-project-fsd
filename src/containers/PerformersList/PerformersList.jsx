@@ -9,7 +9,7 @@ export function PerformersList() {
   useEffect(() => {
     UserService.findByRole()
       .then((res) => {
-        console.log("res.data: ", res);
+        console.log("res: ", res);
         const performerUsers = res.filter(
           (users) => users.role === "performer"
         );
@@ -21,7 +21,7 @@ export function PerformersList() {
   }, []);
 
   const selectPerformer = (performers) => {
-    navigate(`/performer/${performers.performers_id}`);
+    navigate(`/users/${performers.performers_id}`);
   };
 
   return (
