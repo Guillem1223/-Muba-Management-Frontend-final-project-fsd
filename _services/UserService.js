@@ -32,6 +32,7 @@ UserService.getUserById = async (userId) => {
       `http://localhost:3000/users/${userId}`,
       config
     );
+    console.log("response: ", response.data);
     return response.data;
   } catch (error) {
     console.log(error.message || error);
