@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from "react";
 import UserService from "../../../_services/UserService";
-
-import { useParams } from "react-router-dom";
+import "./PerformerDetail.scss";
+import { useNavigate, useParams } from "react-router-dom";
 
 export function PerformerDetail() {
   const [performer, setPerformer] = useState([]);
   const { id } = useParams();
-
+  const navigate = useNavigate();
+  // const selectContract = navigate("/users/contract");
   useEffect(() => {
     getDetails(id);
     console.log("performer: ", performer);
@@ -22,7 +23,7 @@ export function PerformerDetail() {
   };
 
   return (
-    <div>
+    <div className="ptCSS">
       <h1>Performer Detail</h1>
 
       <div>
@@ -31,10 +32,19 @@ export function PerformerDetail() {
           src="/public/img/Foto estandar performersCard.svg"
           alt="Performer"
         />
-        {performer.performers.map((performerItem, index) => (
-          <p>{performerItem.project_description}</p>
-        ))}
-        <button className="btn btn-success">Contract</button>
+        {performer.performers &&
+          performer.performers.map((performerItem, index) => (
+            <div key={index}>
+              <h5>{performerItem.music_styles}</h5>
+              <p>{performerItem.project_description}</p>
+            </div>
+          ))}
+        <button
+          className="btn btn-success"
+          onClick={() => navigate("/users/contract")}
+        >
+          Contract
+        </button>
       </div>
     </div>
   );
