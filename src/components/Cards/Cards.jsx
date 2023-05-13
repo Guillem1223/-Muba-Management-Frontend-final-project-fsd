@@ -21,7 +21,11 @@ export const Cards = ({ performers }) => {
         <div className="card-body">
           <h2 className="card-title">{performers.nombre_user}</h2>
           {performers.performers.map((performersItem, index) => (
-            <h5>{performersItem.music_styles}</h5>
+            <div key={index}>
+              <h5>{performersItem.music_styles}</h5>
+              <p>Recomended for {performersItem.likes} people</p>
+            </div>
+            // (<p>Recomended for {performersItem.likes} people</p>)
           ))}
           <button
             onClick={() => selectPerformer(performers)}
